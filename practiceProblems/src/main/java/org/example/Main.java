@@ -6,7 +6,8 @@ public class Main {
 //        StarPatterns.rightTrianglePattern(5);
 //        StarPatterns.BlockPattern(5);
 //        NumberPatterns.numStepStaircase(5);
-        StarPatterns.invertedRightTriangle(5);
+//        StarPatterns.invertedRightTriangle(5);
+        NumberPatterns.invertedRightNumberPyramid(5);
 
     }
 

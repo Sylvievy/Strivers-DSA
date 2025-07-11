@@ -34,4 +34,15 @@ public class NumberPatterns {
             System.out.println();
         }
     }
+
+    public static void invertedRightNumberPyramid(int n){
+        System.out.println("Pattern : Inverted Right Number Pyramid  | N = "+n);
+        for(int i=n;i>=0;i--){
+            for(int j=1;j<=i;j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+    }
 }
