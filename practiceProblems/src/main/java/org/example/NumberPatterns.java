@@ -34,7 +34,13 @@ public class NumberPatterns {
             System.out.println();
         }
     }
-
+/*
+    12345
+    1234
+    123
+    12
+    1
+ */
     public static void invertedRightNumberPyramid(int n){
         System.out.println("Pattern : Inverted Right Number Pyramid  | N = "+n);
         for(int i=n;i>=0;i--){
