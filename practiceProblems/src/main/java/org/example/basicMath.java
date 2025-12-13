@@ -54,15 +54,15 @@ public class basicMath {
         System.out.println("The divisors of "+n+" are "+ divisors);
     }
 
-    public static void palindrome(int n){
-        int given=n;
-        String checkNum="";
+    public static void palindrome(long n){
+        long given=n;
+        long reverseNum=0;
         while(n>0){
-            int x=n%10;
-            checkNum+=String.valueOf(x);
+            long x=n%10;
+            reverseNum=(reverseNum*10)+x;
             n/=10;
         }
-        String result=(checkNum.equals(String.valueOf(given)))?"a Palindrome":"not a Palindrome";
+        String result=(reverseNum==given)?"a Palindrome":"not a Palindrome";
         System.out.println("The given number "+given+" is "+result);
     }
 
@@ -70,7 +70,7 @@ public class basicMath {
 
     public static void main(String[] args){
         System.out.print("Enter a number:");
-        int x=sc.nextInt();
+        long x=sc.nextLong();
 //        System.out.print("Enter a number:");
 //        int y=sc.nextInt();
 //        countDigits(x);
