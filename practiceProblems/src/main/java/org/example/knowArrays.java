@@ -6,16 +6,15 @@ import java.util.Arrays;
 import java.lang.StringBuilder;
 
 public class knowArrays {
-    static int RANGE_LIMIT=20;
     public class hashing{
         public static void countOccurences(int[] arr){
-            int[] freq=new int[RANGE_LIMIT];
+            int[] freq=new int[arr.length];
 
             for(int i=0;i<arr.length;i++){
                 int x=arr[i];
                 freq[x]++;
             }
-            //Genarated aray
+            //Generated array
             System.out.println(Arrays.toString(arr));
 
             //frequency initialisation
@@ -72,7 +71,7 @@ public class knowArrays {
         //generating random numbers to fill the array
         int[] arr=new int[arrLen];
         for(int i=0;i<arrLen;i++){
-            arr[i]=r.nextInt(RANGE_LIMIT);
+            arr[i]=r.nextInt(arr.length);
         }
 
         hashing.countOccurences(arr);
