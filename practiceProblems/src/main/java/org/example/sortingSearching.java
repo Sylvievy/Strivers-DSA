@@ -62,6 +62,31 @@ public class sortingSearching {
         return arr;
     }
 
+    public static void binarySearch(int[] arr, int n){
+        int[] sArr=insertionSort(arr);
+        System.out.println("Given element to find:"+n);
+        int mid=sArr.length/2;
+        if(n==sArr[mid]){
+            System.out.println("The given element is found at index:"+mid);
+        } else if (n<sArr[mid]) {
+            for(int i=0;i<mid;i++){
+                if(n==sArr[i]){
+                    System.out.println("The given element is found at index:"+i);
+                }
+            }
+        }else if(n>sArr[mid]){
+            for(int i=mid;i<sArr.length;i++){
+                if(n==sArr[i]){
+                    System.out.println("The given element is found at index:"+i);
+                }
+            }
+        }else{
+            System.out.println("The given element is not present in the array!!");
+        }
+
+    }
+
+
     public static void main(String[] args){
         Random r=new Random();
         Scanner sc=new Scanner(System.in);
@@ -79,7 +104,7 @@ public class sortingSearching {
 //        insertionSort(arr);
 //        bubbleSort(arr);
 
-
+        binarySearch(arr, x);
 
     }
 }
