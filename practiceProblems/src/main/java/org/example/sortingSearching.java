@@ -63,26 +63,32 @@ public class sortingSearching {
     }
 
     public static void binarySearch(int[] arr, int n){
-        int[] sArr=insertionSort(arr);
+        int[] sortedArr=insertionSort(arr);
         System.out.println("Given element to find:"+n);
-        int mid=sArr.length/2;
-        if(n==sArr[mid]){
-            System.out.println("The given element is found at index:"+mid);
-        } else if (n<sArr[mid]) {
-            for(int i=0;i<mid;i++){
-                if(n==sArr[i]){
-                    System.out.println("The given element is found at index:"+i);
-                }
+
+        int low=0;
+        int high=sortedArr.length-1;
+
+        while(low<=high){
+            /*
+            we do not use arr.length/2 because it constantly checks the middle of the entire array
+            instead of the new middle when we cut the array into half
+             */
+            int mid=low+(high-low)/2; //(high-low) check for integer overflow
+
+            if(n==sortedArr[mid]){
+                System.out.println("the given element is at index "+mid);
+                return;
             }
-        }else if(n>sArr[mid]){
-            for(int i=mid;i<sArr.length;i++){
-                if(n==sArr[i]){
-                    System.out.println("The given element is found at index:"+i);
-                }
+            if(n>sortedArr[mid]){
+                low=mid+1;
             }
-        }else{
-            System.out.println("The given element is not present in the array!!");
+
+            if(n<sortedArr[mid]){
+                high=mid-1;
+            }
         }
+        System.out.println("the given element does not exist in here!!");
 
     }
 
@@ -93,10 +99,10 @@ public class sortingSearching {
         System.out.print("Enter array length (Arrlength < 10): ");
         int arrLen=sc.nextInt();
         int[] arr=new int[arrLen];
-        System.out.println("The generated array is:");
+//        System.out.println("The generated array is:");
         for(int i=0;i<arrLen;i++) {
             arr[i] = r.nextInt(20);
-            System.out.print(arr[i]+" ");
+//            System.out.print(arr[i]+" ");
         }
         System.out.println();
         int x=r.nextInt(19);
